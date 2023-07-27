@@ -10,6 +10,7 @@ public class AllCustomObjectHandler {
         }
         system.debug('All Custom Object Are'+objectList);
         objectList.sort();
+        system.debug('objectList');
         return objectList;
     }
 }
