@@ -11,7 +11,10 @@ public class AllCustomObjectHandler {
         system.debug('All Custom Object Are'+objectList);
         objectList.sort();
         system.debug('objectList');
-        system.debug('objectList11');
+        system.debug('objectList11'); 
+                system.debug('objectList11');
+
+
         return objectList;
     }
 }
