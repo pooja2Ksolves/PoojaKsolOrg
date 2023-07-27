@@ -1,3 +1,4 @@
 public class CalculateTotalContactFees {
-System.debug('CalculateTotalContactFees');
+    public static void test(){
+    }
 }
