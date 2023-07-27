@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Account Phone" icon-name="standard:account">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Phone Number" value={phoneNumber} disabled></lightning-input>
+            <lightning-button variant="brand" label="View Number" title="View Number" onclick={handleViewNumber}></lightning-button>
+        </div>
+        <div class="slds-p-around_medium">
+            <p class="phone-number"></p>
+        </div>
+    </lightning-card>
+</template>

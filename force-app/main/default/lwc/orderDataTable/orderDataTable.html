@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Order Search">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Order Number" value={searchQuery} onchange={handleSearch}></lightning-input>
+        </div>
+        <lightning-datatable
+            data={data}
+            columns={columns}
+            key-field="Id"
+            hide-checkbox-column="true">
+        </lightning-datatable>
+    </lightning-card>
+</template>

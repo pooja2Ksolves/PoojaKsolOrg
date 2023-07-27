@@ -1,0 +1,31 @@
+<aura:component controller="AjinkyaTestLightningAccController" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="contactList" type="Contact[]" />
+    <aura:attribute name="columns" type="List" default="[
+        {label: 'First Name', fieldName: 'FirstName', type: 'text', editable: true},
+        {label: 'Last Name', fieldName: 'LastName', type: 'text', editable: true},
+        {label: 'Account Name', fieldName: 'AccountName', type: 'text', editable: false}
+    ]" />
+    <aura:attribute name="updatedList" type="Contact[]" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}" />
+    
+    <lightning:card iconName="standard:work_capacity_usage" title="Related Contacts">
+        <aura:if isTrue="{!not(empty(v.contactList))}">
+            <lightning:datatable data="{!v.contactList}"
+                                 columns="{!v.columns}"
+                                 keyField="Id"
+                                 onrowaction="{!c.handleRowAction}"
+                                 hideCheckboxColumn="true"
+                                 showRowNumberColumn="true"
+                                 sortedBy="FirstName"
+                                 sortedDirection="asc"
+                                 resizeColumnDisabled="true"
+                                 minColumnWidth="50"
+                                 suppressBottomBar="true" />
+            <aura:set attribute="else">
+                <div style="text-align: center">There are no related contacts</div>
+            </aura:set>
+        </aura:if>
+    </lightning:card>
+</aura:component>

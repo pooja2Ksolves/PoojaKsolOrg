@@ -1,0 +1,10 @@
+<template>
+  <lightning-card>
+    <div>
+        <lightning-icon icon-name="Standard:contact" size="small">Contact form in LWC</lightning-icon>
+    </div>
+    <lightning-input label="FirstName" value={firstname} onchange={ContactChangeVal}></lightning-input>
+    <lightning-input label="LastName" value={lastname} onchange={ContactChangeVal}></lightning-input>
+    <lightning-button label="Create Contact Record" onclick={insertContactAction}></lightning-button>
+  </lightning-card>  
+</template>

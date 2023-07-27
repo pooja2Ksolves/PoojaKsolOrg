@@ -1,0 +1,103 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    
+    
+    <aura:attribute name="newWorkOrder" type="Object"/>
+    
+    <aura:attribute name="sObjectName" type="String" />
+
+    <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+    <aura:attribute name="fields"
+                    type="String[]"
+                    default="['Status', 'Subject', 'RecordTypeId', 'AccountId', 'Order_Number__c', 'Product__c','Description','ProductCategory__c','Issue_Description__c','Customer_Symptom_Code__c','Symptom_Details__c']"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    
+    
+    <div class="slds-m-around_xx-large">
+        <aura:if isTrue="{!v.isModalOpen}">
+            <aura:set attribute="else">
+                
+                
+            </aura:set>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModel }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">New Work Order: Pickup and Drop</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        
+                        <lightning:recordForm objectApiName="WorkOrder"
+                                              fields="{!v.fields}"/>
+                        
+                        <div class="slds-p-horizontal--small">
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_5-of-12">
+                                    <lightning:input aura:id="Status" label="Status" value="{!v.newWorkOrder.Status}" disable="true"/>
+                                </div>
+                                <div class="slds-col slds-size_1-of-12"></div>
+                                <div class="slds-col slds-size_5-of-12">
+                                    <lightning:input aura:id="recordTypeId" label="Work Order Record Type" value="{!v.newWorkOrder.RecordTypeId}" disable="true"/>
+                                </div>
+                            </div>
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_5-of-12">
+                                    <lightning:input aura:id="Account" label="Account" value="{!v.newWorkOrder.AccountId}" disable="true"/>
+                                </div>            
+                                <div class="slds-col slds-size_1-of-12"></div>
+                                <div class="slds-col slds-size_5-of-12">
+                                    <lightning:input aura:id="OrderNumber" label="Order Number" value="{!v.newWorkOrder.Order_Number__c}" disable="true"/>
+                                </div>
+                            </div>
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_5-of-12">
+                                    <lightning:input aura:id="OrderProduct" label="Order Product" value="{!v.newWorkOrder.Product__c}" disable="true"/>
+                                </div>
+                            </div>
+                            <lightning:input aura:id="Subject" label="Subject" value="{!v.newWorkOrder.Description}" />
+                            <lightning:input aura:id="Description" label="Description" value="{!v.newWorkOrder.Description}" />
+                            
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_5-of-12">
+                                    <lightning:input aura:id="ProductCategory" label="Product Category" value="{!v.newWorkOrder.ProductCategory__c}" />
+                                </div>
+                                <div class="slds-col slds-size_1-of-12"></div>
+                                <div class="slds-col slds-size_5-of-12">
+                                    <lightning:input aura:id="IssueDescription" label="Issue Description" value="{!v.newWorkOrder.Issue_Description__c}" />
+                                </div>
+                            </div>
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_5-of-12">
+                                    <lightning:input aura:id="CustomerSymptomCode" label="Customer Symptom Code" value="{!v.newWorkOrder.Customer_Symptom_Code__c}" />
+                                </div>
+                                <div class="slds-col slds-size_1-of-12"></div>
+                                <div class="slds-col slds-size_5-of-12">
+                                    <lightning:input aura:id="SymptomDetails" label="Symptom Details" value="{!v.newWorkOrder.Symptom_Details__c}" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="neutral"
+                                          label="Cancel"
+                                          title="Cancel"
+                                          onclick="{! c.closeModel }"/>
+                        <lightning:button variant="brand"
+                                          label="Save"
+                                          title="Save"
+                                          onclick="{!c.submitDetails}"/>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+
+</aura:component>

@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="TaskListController">          
+    <aura:attribute type="Task[]" name="taskList"/>
+    <aura:attribute name="mycolumns" type="List"/>
+     
+    <aura:handler name="init" value="{!this}" action="{!c.fetchTasks}"/>
+     <lightning:card title="Datatable Example" iconName="action:new_task">
+    <lightning:datatable data="{!v.taskList}"
+                         columns="{! v.mycolumns }"
+                         keyField="id"
+                         />
+    </lightning:card>
+</aura:component>

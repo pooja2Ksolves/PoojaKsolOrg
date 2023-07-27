@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="ApexImperativeMethod" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <p class="slds-m-bottom_small">
+                <lightning-button label="Load Opppertunity" onclick={handleLoad}></lightning-button>
+            </p>
+            <template if:true={Opportunitys}>
+                <template for:each={Opportunitys} for:item="Opportunity">
+                    
+                   <!-- <p key={Opportunity.AccountId}>{Opportunity.AccountId}{Opportunity.expr0}</p>-->
+                    <tr key={Opportunity.Name}>
+                        <td>{Opportunity.Name}</td>
+                        <td>{Opportunity.expr0}</td>
+                        <td>{Opportunity.expr1}</td>
+
+                    </tr>
+             
+                </template>
+
+            </template>
+           <!-- <template if:true={error}>
+                <c-error-panel errors={error}></c-error-panel>
+            </template>-->
+        </div>
+    </lightning-card>
+</template>

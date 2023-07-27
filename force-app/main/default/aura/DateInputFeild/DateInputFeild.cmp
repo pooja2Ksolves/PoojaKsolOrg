@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	 <aura:attribute name="selectedDate" type="String" default=" " />
+    
+    <ui:inputDate
+        aura:id="dateChangeId"
+        label="Required date field"
+        displayDatePicker="true"
+        value="{!v.selectedDate}"
+        change="{!c.convertDateFormat}"
+    />
+</aura:component>

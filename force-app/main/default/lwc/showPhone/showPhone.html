@@ -1,0 +1,8 @@
+<template>
+    <template if:true={account.Show_Phone__c}>
+        <p>{phone}</p>
+    </template>
+    <template if:false={account.Show_Phone__c}>
+        <p>{hiddenPhone}</p>
+    </template>
+</template>

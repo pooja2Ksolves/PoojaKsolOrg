@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Fetch Salesforce Object Records">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-combobox label="Select an Object" value={selectedObject} 
+                options={objectOptions} onchange={handleObjectChange}>
+                </lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-combobox label="Select a Field" value={selectedField} 
+                options={fieldOptions} onchange={handleFieldChange}>
+                </lightning-combobox>
+            </div>
+        </div>
+        <template if:true={records}>
+            <lightning-datatable data={records} columns={columns} key-field="Id">
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="All Custom Objects">
+        <lightning-dual-listbox name="Objects"
+                                label="Select object:"
+                                source-label="Available Objects"
+                                selected-label="Selected Objects"
+                                options={objvalue}
+                                value={selectedobj}
+                                onchange={handleChange}>
+        </lightning-dual-listbox>
+        <lightning-button variant="success" label="Export" onclick={scheduledQueueable}>
+        </lightning-button>
+    </lightning-card>
+</template>

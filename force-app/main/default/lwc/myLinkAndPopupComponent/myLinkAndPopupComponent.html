@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="My Link and Pop-up Component">
+      <a onclick={showPopup}>My Link</a>
+      <template if:true={show}>
+        <!-- The content of your pop-up goes here -->
+        This is my pop-up content!
+      </template>
+    </lightning-card>
+  </template>

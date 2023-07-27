@@ -1,0 +1,12 @@
+<template>
+    <ul>
+        <div class='slds-box slds-theme_default custom-background'>
+
+        <template for:each={userWithTitles} for:item="user">
+            <li key={user.Id}>
+                {user.Name}, {user.Title}
+            </li>
+        </template>
+        </div>
+    </ul>
+</template>

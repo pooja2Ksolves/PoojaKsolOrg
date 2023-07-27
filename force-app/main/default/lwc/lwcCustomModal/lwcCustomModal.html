@@ -1,0 +1,13 @@
+<template>
+    <template if:true={customFormModal}>
+      <!-- Modal content goes here -->
+      <div class="modal">
+        <div class="modal-content">
+          <h1>This is my modal pop-up!</h1>
+          <button onclick={customHideModalPopup}>Close</button>
+        </div>
+      </div>
+    </template>
+  
+    <button onclick={customShowModalPopup}>Show Modal</button>
+  </template>

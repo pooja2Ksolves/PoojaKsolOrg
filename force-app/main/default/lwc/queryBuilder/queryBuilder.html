@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Query Builder">
+        <lightning-combobox
+            label="Select an object"
+            options={objectOptions}
+            onchange={handleObjectChange}>
+        </lightning-combobox>
+        <lightning-dual-listbox
+            label="Select fields"
+            options={fieldOptions}
+            onchange={handleFieldChange}>
+        </lightning-dual-listbox>
+        <lightning-button
+            label="Run Query"
+            onclick={runQuery}>
+        </lightning-button>
+        <template if:true={result}>
+            <lightning-datatable
+                data={result}
+                columns={columns}>
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>

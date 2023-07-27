@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-m-around_xx-large">
+      <lightning-dual-listbox
+        name="Objects"
+        label="Select object:"
+        source-label="Available Objects"
+        selected-label="Selected Objects"
+        options={objvalue}
+        value={selectedobj}
+        onchange={handleChange}
+      ></lightning-dual-listbox>
+  
+      <lightning-button variant="success" label="Export" onclick={scheduledQueueable}></lightning-button>
+    </div>
+  </template>

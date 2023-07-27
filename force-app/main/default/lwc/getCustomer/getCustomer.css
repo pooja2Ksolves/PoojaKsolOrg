@@ -1,0 +1,16 @@
+.subHeading {
+    text-decoration: underline;
+    margin: 10px;
+}
+
+.outerBoxCSS {
+    border: 1px; margin-bottom: 50px;
+    border-color: black;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-style: solid;
+    word-wrap: break-word;
+    width: fit-content;
+
+}

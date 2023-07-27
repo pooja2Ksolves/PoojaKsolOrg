@@ -1,0 +1,8 @@
+:host {
+   --slds-c-button-sizing-border: 3px;
+   --slds-c-button-color-border:black;
+   --slds-c-button-spacing-block-end: 1rem;
+   --slds-c-button-spacing-block-start: 1rem;
+   --slds-c-button-spacing-inline-end: 1rem;
+   --slds-c-button-spacing-inline-start: 1rem;
+}

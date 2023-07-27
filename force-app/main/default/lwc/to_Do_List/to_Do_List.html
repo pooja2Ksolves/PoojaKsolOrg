@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="To-Do List">
+        <div class="slds-m-around_medium">
+        <lightning-input label="Add To-Do Task" onchange={handleChange} class="slds-m-bottom_medium toDoInput" value={task}></lightning-input>
+        <lightning-button variant="Brand" label="Add To List" onclick={handleClick} ></lightning-button>
+            <br/>
+        <template for:each={taskList} for:item="rec">
+            <div key={rec.id}>
+                <li>
+                    <strong>{rec}</strong>
+                </li>
+            </div>
+        </template>
+        </div>
+    </lightning-card>
+</template>

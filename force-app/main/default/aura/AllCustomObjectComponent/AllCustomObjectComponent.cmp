@@ -1,0 +1,21 @@
+<aura:component controller="AllCustomObjectHandler" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="objvalue" type="List" default="[]"/>
+    <aura:attribute name="selectedobj" type="List" default="[]" />
+    <aura:attribute name="selectedObjName" type="String" />
+    
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <div class="slds-m-around_xx-large">
+        <lightning:dualListbox name="Objects"
+                               aura:id = "objectId" 
+                               label ="Select object:" 
+                               sourceLabel="Available Objects" 
+                               selectedLabel="Selected Objects" 
+                               options="{!v.objvalue}" 
+                               value ="{!v.selectedobj}" 
+                               onchange = "{!c.handleChange}" /><br></br>
+        
+        <lightning:button variant="success" label="Export" onclick="{!c.scheduledQueueable}" />
+    </div>
+    
+</aura:component>

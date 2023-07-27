@@ -1,0 +1,58 @@
+<template>
+    <!-- lightning button for open modal window -->
+     <lightning-button 
+     variant="brand-outline"
+       label="Get Opportunity"
+       title="Get Opportunity"
+       onclick={openModal}
+       class="slds-m-left_x-small">
+    </lightning-button> 
+
+    <!--Use template if:true to display/hide popup based on isModalOpen value--> 
+    <template if:true={isModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_small">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Get Opportunity</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-var-p-around_medium">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_6-of-12">
+                            <lightning-input data-name="Start_Date" style="width: 250px" type="date" name="Start Date" label="Start Date" id="startDate" value={startDate} class="slds-m-horizontal_xxx-large slds-align_absolute-center">
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_6-of-12">
+                            <lightning-input data-name="End_Date" style="width: 250px" type="date" name="End Date" label="End Date" id="endDate" value={endDate} class="slds-m-horizontal_xxx-large slds-align_absolute-center">
+                            </lightning-input>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    <div class="slds-align_absolute-center">
+                    <!-- <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button> -->
+                    <lightning-button class="slds-m-around_xx-small" label="Cancel" onclick={closeModal}>
+                    </lightning-button>
+                    <!-- <button class="slds-button slds-button_brand" onclick={submitDetails} title="OK">OK</button> -->
+                    <lightning-button class="slds-m-around_xx-small" label="Submit" type="submit"
+                    variant="brand" onclick={submitDetails}></lightning-button>
+                </div>
+                </footer>
+            </div>
+        </div>
+        
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+ </template>

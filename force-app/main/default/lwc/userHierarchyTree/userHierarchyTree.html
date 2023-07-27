@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="User Hierarchy">
+        <template if:true={userHierarchy}>
+            <lightning-tree items={userHierarchy} onselect={handleSelect}></lightning-tree>
+        </template>
+        <template if:false={userHierarchy}>
+            No data available.
+        </template>
+    </lightning-card>
+</template>
